@@ -1,6 +1,14 @@
--- get the two most recent orders
+-- cool SQl techniques - multiline SQl queries
+select *
+from customers;
 
-select TOP 2 *
-from orders
-order by order_date DESC
--- it sorts the data into DESC order of the date
+
+select *
+from  orders;
+
+-- it is concept of multiline queries - that is we can write multiple queries 
+-- so that - we also can generate  multiple result in output window 
+
+
+
+
