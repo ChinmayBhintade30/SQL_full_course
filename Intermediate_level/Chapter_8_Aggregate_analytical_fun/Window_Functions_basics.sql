@@ -17,3 +17,41 @@ Aggregate , rank , and Analytical functions
 SELECT
 SUM(Sales) AS total_sales
 FROM Sales.Orders
+
+
+
+-- SQL task --> find the total sales for each product
+
+-- now use - GROUP BY clause - to group the each product - using ProductID
+
+SELECT
+	ProductID,
+	SUM(Sales) AS total_sales
+FROM sales.Orders
+GROUP BY ProductID
+
+--SQL task - find the total sales for each product 
+-- Additionally provide details such as OrderID  and OrderDate
+SELECT
+	OrderID,
+	OrderDate,
+	ProductID
+FROM sales.Orders
+GROUP BY 
+	OrderID,
+	OrderDate,
+	ProductID
+	
+
+/*
+SQL task - same task using window function that is OVER() --> and PARTITION BY PRODUCTS
+
+*/
+SELECT
+	SUM(sales) OVER(PARTITION BY PRODUCTID) TotalSalesByProducts
+FROM Sales.Orders
+
+
+
+
+
